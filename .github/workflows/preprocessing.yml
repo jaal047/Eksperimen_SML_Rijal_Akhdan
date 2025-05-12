@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   preprocess:
@@ -15,8 +13,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-      
-    - name: Set up Python
+
+    - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
@@ -24,14 +22,13 @@ jobs:
     - name: Install Dependencies
       run: |
         pip install -r requirements.txt
-    
-    - name: Run Preprocessing
+
+    - name: Run Preprocessing Script
       run: |
-        cd preprocessing
-        python automate_Rijal\ Akhdan.py
-    
-    - name: Upload Processed Data
+        python preprocessing/automate_Rijal_Akhdan.py
+
+    - name: Upload Preprocessed Dataset
       uses: actions/upload-artifact@v3
       with:
         name: preprocessed-data
-        path: preprocessing/Breast\ Cancer_preprocessing
+        path: preprocessing/Breast Cancer_preprocessing
