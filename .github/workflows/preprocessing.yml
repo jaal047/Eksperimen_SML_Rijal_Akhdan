@@ -33,7 +33,7 @@ jobs:
         ls -R preprocessing
 
     - name: Upload Preprocessed Dataset
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@9c97f0b8c123bcbafccf05b5bc5914b473fbfa4b
       with:
         name: preprocessed-data
         path: "preprocessing/BreastCancer_preprocessing"
