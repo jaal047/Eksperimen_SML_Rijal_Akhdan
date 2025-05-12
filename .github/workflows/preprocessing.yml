@@ -34,11 +34,11 @@ jobs:
 
     - name: Verify Dataset Folder Existence
       run: |
-        echo "Memeriksa folder preprocessing..."
+        echo "Memeriksa folder preprocessing/BreastCancer_preprocessing..."
         ls -R preprocessing/BreastCancer_preprocessing
 
     - name: Upload Preprocessed Dataset
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: preprocessed-data
         path: "preprocessing/BreastCancer_preprocessing"
