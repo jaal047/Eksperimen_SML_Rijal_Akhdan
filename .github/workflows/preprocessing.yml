@@ -13,11 +13,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-    
-    - name: Check Preprocessed Folder
-      run: |
-        echo "Cek isi folder preprocessing:"
-        ls -R preprocessing
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -31,6 +26,11 @@ jobs:
     - name: Run Preprocessing Script
       run: |
         python preprocessing/automate_Rijal_Akhdan.py
+
+    - name: Check Preprocessed Folder
+      run: |
+        echo "Cek isi folder preprocessing:"
+        ls -R preprocessing
 
     - name: Upload Preprocessed Dataset
       uses: actions/upload-artifact@v3
