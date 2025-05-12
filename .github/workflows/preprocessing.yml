@@ -31,3 +31,9 @@ jobs:
       run: |
         echo "Cek isi folder preprocessing:"
         ls -R preprocessing
+
+    - name: Upload Preprocessed Dataset
+      uses: actions/upload-artifact@v3
+      with:
+        name: preprocessed-data
+        path: "preprocessing/BreastCancer_preprocessing"
