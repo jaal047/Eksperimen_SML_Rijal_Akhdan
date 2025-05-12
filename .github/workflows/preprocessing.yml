@@ -32,8 +32,13 @@ jobs:
         echo "Cek isi folder preprocessing:"
         ls -R preprocessing
 
+    - name: Verify Dataset Folder Existence
+      run: |
+        echo "Memeriksa folder preprocessing..."
+        ls -R preprocessing/BreastCancer_preprocessing
+
     - name: Upload Preprocessed Dataset
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: preprocessed-data
         path: "preprocessing/BreastCancer_preprocessing"
