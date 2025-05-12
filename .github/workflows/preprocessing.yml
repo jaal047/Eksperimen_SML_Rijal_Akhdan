@@ -8,7 +8,7 @@ on:
 
 jobs:
   preprocess:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout Repository
@@ -33,7 +33,7 @@ jobs:
         ls -R preprocessing
 
     - name: Upload Preprocessed Dataset
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
         name: preprocessed-data
         path: "preprocessing/BreastCancer_preprocessing"
