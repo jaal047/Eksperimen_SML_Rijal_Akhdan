@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: preprocessed-data
-        path: preprocessing/Breast Cancer_preprocessing
+        path: "preprocessing/Breast Cancer_preprocessing"
