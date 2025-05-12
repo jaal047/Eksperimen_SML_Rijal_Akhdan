@@ -41,4 +41,4 @@ def preprocess_data(input_path, output_path):
     print("[SUCCESS] Preprocessing completed and files are saved at:", output_path)
 
 # Pemanggilan fungsi
-preprocess_data('../BreastCancer_raw/breast-cancer.csv', '../preprocessing/BreastCancer_preprocessing')
+preprocess_data('/BreastCancer_raw/breast-cancer.csv', '/preprocessing/BreastCancer_preprocessing')
