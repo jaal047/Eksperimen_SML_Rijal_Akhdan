@@ -1,0 +1,37 @@
+name: Preprocessing Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run Preprocessing
+      run: |
+        cd preprocessing
+        python automate_Rijal\ Akhdan.py
+    
+    - name: Upload Processed Data
+      uses: actions/upload-artifact@v3
+      with:
+        name: preprocessed-data
+        path: preprocessing/Breast\ Cancer_preprocessing
